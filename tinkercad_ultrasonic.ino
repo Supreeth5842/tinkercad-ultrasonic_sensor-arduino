@@ -1,9 +1,8 @@
-// Door Alarm Using Arduino UNO and Ultrasonic Sensor
-// Code to be used in the Text sub-window of tinkercad.com circuit page
+// LED BLINKING Using Arduino UNO and Ultrasonic Sensor
 
-int trigger_pin = 2;
-int echo_pin = 3;
-int buzzer_pin = 10; 
+int trigger_pin = ?;
+int echo_pin = ?;
+int led_pin = ?; 
 int time;
 int distance; 
 void setup() 
@@ -11,7 +10,7 @@ void setup()
         Serial.begin (9600); 
         pinMode (trigger_pin, OUTPUT); 
         pinMode (echo_pin, INPUT);
-        pinMode (buzzer_pin, OUTPUT);
+        pinMode (led_pin, OUTPUT);
 }
 void loop() 
 {
@@ -23,17 +22,17 @@ void loop()
 
   if (distance <= 10) 
         {
-        Serial.println (" Door Open ");
+        Serial.println (" LED ON ");
         Serial.print (" Distance= ");              
         Serial.println (distance);        
-        digitalWrite (buzzer_pin, HIGH);
-        delay (500);
+        digitalWrite (led_pin, HIGH);
+        delay (100);
         }
   else {
-        Serial.println (" Door closed ");
+        Serial.println (" LED OFF ");
         Serial.print (" Distance= ");              
         Serial.println (distance);        
-        digitalWrite (buzzer_pin, LOW);
+        digitalWrite (led_pin, LOW);
         delay (500);        
        } 
 }
